@@ -32,3 +32,10 @@ function updateCartButton(){
     //Impacto en el HTML
     document.getElementById("cart_btn").innerHTML = content;
 }
+
+//Remove all products from cart
+function cleanCart() {
+    localStorage.removeItem("cart");
+    updateCartButton();
+    renderCartProducts(); //para que renderice luego de borrar todo
+}
