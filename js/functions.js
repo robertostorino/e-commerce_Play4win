@@ -13,7 +13,12 @@ function saveProductsCart(products) {
 
 //Manda mensaje de oferta
 function messageOffer() {
-    Swal.fire("SPECIAL OFFER! BUYING 4, THE 5TH IS FREE!!!");
+    Swal.fire("SPECIAL OFFER! Buying five different products, THE 5TH IS FREE!!!");
+}
+
+//Manda mensaje de oferta
+function messageOfferTook() {
+    Swal.fire("YOU'VE OBTAINED A 100% OFF ON THIS PRODUCT");
 }
 
 //Manda mensaje al agregar un producto al carrito
@@ -31,20 +36,70 @@ function messageAddCart() {
 //Mensaje para confirmar vaciado de carrito
 function messageCleanCart () {
     Swal.fire({
-        title: 'Are you sure to Clean your Cart?',
-        showDenyButton: true,
+        title: 'Are you sure to clean cart?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
         showCancelButton: true,
-        confirmButtonText: 'Yes',
-        denyButtonText: `No`,
-        }).then((result) => {
-        /* Read more about isConfirmed, isDenied below */
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, clean it!'
+    }).then((result) => {
         if (result.isConfirmed) {
-            Swal.fire('Clean!', '', 'success')
-        } else if (result.isDenied) {
-            Swal.fire('Changes are not saved', '', 'info')
+            cleanCart();
+            Swal.fire(
+            'Cleaned!',
+            'Your cart was successfully cleaned.',
+            'success'
+            )
         }
     })
 }
+
+//Mensaje para confirmar la compra
+function messageBuy() {
+    Swal.fire({
+        title: 'Do you want to buy it now?',
+        icon: 'question',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, give it to me!!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            cleanCart();
+            Swal.fire(
+            'Transaction completed!',
+            '',
+            'success'
+            )
+        }
+    })
+}
+
+//Mensaje para confirmar vaciado de carrito
+function messageCleanCart () {
+    Swal.fire({
+        title: 'Are you sure to clean cart?',
+        text: "You won't be able to revert this!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, clean it!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            cleanCart();
+            Swal.fire(
+            'Cleaned!',
+            'Your cart was successfully cleaned.',
+            'success'
+            )
+        }
+    })
+}
+
+
+
 
 function updateCartButton(){
     let products = loadProductsCart();
@@ -62,6 +117,9 @@ function updateCartButton(){
 
         //Si ya tiene 2 artículos en el carrito, le salta un alert con la promoción
         total == 2 && messageOffer();
+
+        //Cuando llega a 5, indica que dicho producto tiene descuento del 100%
+        total == 5 && messageOfferTook();
 
         content = `<button type="button" class="btn btn-warning position-relative">
                         <img src="images/cart.png" width="24"><span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">${total}</span>
@@ -98,8 +156,11 @@ function addCart (id){
     }
 
     saveProductsCart(cartProducts); //actualizo la Local Storage de products cart
+    
     messageAddCart();
+    
     updateCartButton();
+    
     renderCartProducts();
 
 }
