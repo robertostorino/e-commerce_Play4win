@@ -57,20 +57,6 @@ function renderproductsDOM() {
 
 
 
-//Tomo como parámetro un id y agrego dicho product al cart
-function addCart (id){
-    let product = searchProduct(id);
-    let cartProducts = loadProductsCart();
-    console.log(product);
-
-    product.amount = 1; //Le agrego una nueva propiedad al objeto y la inicializo en 1
-    cartProducts.push(product); //Agrego un nuevo objeto al array de productos del carrito
-
-    saveProductsCart(cartProducts); //actualizo la Local Storage de products cart
-    updateCartButton();
-
-}
-
 
 
 saveProductsLS(products);
