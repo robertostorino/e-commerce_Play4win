@@ -1,7 +1,6 @@
 //DOM
 function renderproductsDOM() {
     let products = loadProductsLS();
-    let content = "";
 
     //Recorro el array de products
     for (let product of products) {
@@ -56,9 +55,13 @@ function renderproductsDOM() {
 }
 
 
+fetch("./products.json")
+.then((response) => response.json())
+.then((products) => {
+    saveProductsLS(products);
+    console.log(products);
+});
 
 
-
-saveProductsLS(products);
 updateCartButton();
 renderproductsDOM();

@@ -1,5 +1,5 @@
 //Array con los products de mi e-commerce
-const products = [
+/* const products = [
     {id:1, name:"Battlefield 2024 PS4", category:"First-shooter", description:"", image:"battlefield2042PS4.jpg", price:500},
     {id:2, name:"Elden Ring PS4", category:"RPG Adventure", description:"", image:"eldenRingPS4.jpeg", price:600},
     {id:3, name:"Final Fantasy VII PS4", category:"RPG", description:"", image:"finalFantasyRemakeVIIPS4.jpg", price:450},
@@ -13,7 +13,7 @@ const products = [
     {id:11, name:"The King of Fighters XV PS4", category:"Fight", description:"", image:"theKingOfFightersXVPS4.jpg", price:500},
     {id:12, name:"Uncharted 4 PS4", category:"Adventure", description:"", image:"uncharted4PS4.jpg", price:500},
     {id:13, name:"W2K20 PS4", category:"Fight", description:"", image:"w2k20PS4.jpg", price:500},
-];
+]; */
 
 
 ////        Local Storage       ////

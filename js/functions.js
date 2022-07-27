@@ -16,7 +16,7 @@ function messageOffer() {
     Swal.fire("SPECIAL OFFER! Buying five different products, THE 5TH IS FREE!!!");
 }
 
-//Manda mensaje de oferta
+//Manda mensaje de bonificación
 function messageOfferTook() {
     Swal.fire("YOU'VE OBTAINED A 100% OFF ON THIS PRODUCT");
 }
@@ -28,7 +28,9 @@ function messageAddCart() {
         duration: 3000,
         gravity: 'top',
         position: 'right',
-        backgroundColor: "green",
+        style: {
+            background: "linear-gradient(to right, #00b09b, #21d536)",
+        },
         className: "cartel"
     }).showToast();
 }
