@@ -54,12 +54,11 @@ function renderproductsDOM() {
     }
 }
 
-
+//Tomo datos de una fuente local, el archivo products.json
 fetch("./products.json")
 .then((response) => response.json())
 .then((products) => {
     saveProductsLS(products);
-    console.log(products);
 });
 
 

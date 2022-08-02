@@ -4,7 +4,6 @@
 function renderCartProducts() {
     let products = loadProductsCart();
     let content = `<p class="alert alert-warning" role="alert">Your Cart is empty!</p>`;
-    console.log("longitud = " + products.length);
     let productNumberFullDiscount = 5; //Set on 5 the product with 100% off, so this product price will not be add for total
     let priceDiscounted = 0; //It'll be setted the price of the 5th product in cartProduct
     let productCounter = 0; 
@@ -56,7 +55,6 @@ function renderCartProducts() {
                 
                 total += subtotal;
         }
-        console.log("precio de descuento: " + priceDiscounted);
 
         total -= priceDiscounted; //Descuento el precio del 5º producto del total
 

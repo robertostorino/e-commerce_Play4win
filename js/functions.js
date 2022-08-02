@@ -158,11 +158,8 @@ function addCart (id){
     }
 
     saveProductsCart(cartProducts); //actualizo la Local Storage de products cart
-    
     messageAddCart();
-    
     updateCartButton();
-    
     renderCartProducts();
 
 }
