@@ -24,8 +24,8 @@ function messageOfferTook() {
 //Manda mensaje al agregar un producto al carrito
 function messageAddCart() {
     Toastify({
-        text: "You've successfully added a product to cart",
-        duration: 3000,
+        text: "Added to cart",
+        duration: 1200,
         gravity: 'top',
         position: 'right',
         style: {

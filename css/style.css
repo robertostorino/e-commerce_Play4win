@@ -1,3 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
 .fondo {
     background-color: #f7f7f7;
 }
@@ -5,3 +13,30 @@
 .wallpaper {
     background-image: linear-gradient(to right, cyan, green);
 }
+
+.underline-hover::after{
+    content: "";
+    height: 4px;
+    width: 0;
+    background-color: blue;
+    display: block;
+    transition: all 750ms;
+}
+.underline-hover:hover::after{
+    width: 100%;
+    background-color: #39F5C1;
+}
+
+/* .cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card{
+    position: relative;
+    width: 300px;
+    height: 450px;
+    margin: 40px;
+    border-style: none;
+} */
