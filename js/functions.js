@@ -1,28 +1,32 @@
 //Me trae los products seleccionados,si no existe un array de products me devuelve un array vacío
-function loadProductsCart() {
+const loadProductsCart = () => {
     return JSON.parse(localStorage.getItem("cart")) || [];
 }
 
+
 //Almacena el array de products en el local storage
-function saveProductsCart(products) {
+const saveProductsCart = (products) => {
     localStorage.setItem("cart", JSON.stringify(products));
 }
+
 
 
 ///        cart         ////
 
 //Manda mensaje de oferta
-function messageOffer() {
+const messageOffer = () => {
     Swal.fire("SPECIAL OFFER! Buying five different products, THE 5TH IS FREE!!!");
-}
+} 
+
 
 //Manda mensaje de bonificación
-function messageOfferTook() {
+const messageOfferTook = () => {
     Swal.fire("YOU'VE OBTAINED A 100% OFF ON THIS PRODUCT");
 }
 
+
 //Manda mensaje al agregar un producto al carrito
-function messageAddCart() {
+const messageAddCart = () => {
     Toastify({
         text: "Added to cart",
         duration: 1200,
@@ -35,8 +39,9 @@ function messageAddCart() {
     }).showToast();
 }
 
+
 //Mensaje para confirmar vaciado de carrito
-function messageCleanCart () {
+const messageCleanCart = () => {
     Swal.fire({
         title: 'Are you sure to clean cart?',
         text: "You won't be able to revert this!",
@@ -57,8 +62,9 @@ function messageCleanCart () {
     })
 }
 
+
 //Mensaje para confirmar la compra
-function messageBuy() {
+const messageBuy = () => {
     Swal.fire({
         title: 'Do you want to buy it now?',
         icon: 'question',
@@ -78,32 +84,8 @@ function messageBuy() {
     })
 }
 
-//Mensaje para confirmar vaciado de carrito
-function messageCleanCart () {
-    Swal.fire({
-        title: 'Are you sure to clean cart?',
-        text: "You won't be able to revert this!",
-        icon: 'warning',
-        showCancelButton: true,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, clean it!'
-    }).then((result) => {
-        if (result.isConfirmed) {
-            cleanCart();
-            Swal.fire(
-            'Cleaned!',
-            'Your cart was successfully cleaned.',
-            'success'
-            )
-        }
-    })
-}
 
-
-
-
-function updateCartButton(){
+const updateCartButton = () => {
     let products = loadProductsCart();
     //Se le impactará el content HTML de dicha sección
     let content =`<button type="button" class="btn btn-warning position-relative">
@@ -131,21 +113,19 @@ function updateCartButton(){
     document.getElementById("cart_btn").innerHTML = content;
 }
 
+
 //Remove all products from cart
-function cleanCart() {
+const cleanCart = () => {
     localStorage.removeItem("cart");
     updateCartButton();
     renderCartProducts(); //para que renderice luego de borrar todo
 }
 
+
 //Tomo como parámetro un id y agrego dicho product al cart
-function addCart (id){
+const addCart = (id) => {
     let cartProducts = loadProductsCart();
     let position = cartProducts.findIndex(x => x.id == id); //Me devuelve la posición del producto con el id
-
-   /*  //Desestructuración
-    const { name, price } = product;
-    console.log("Game: " + name + " |  Price: $" + price); */
 
     //si ya existe, entonces incremento en 1 la cantidad (no vuelvo a agregar un objeto nuevo)
     if (position > -1) {
@@ -161,11 +141,11 @@ function addCart (id){
     messageAddCart();
     updateCartButton();
     renderCartProducts();
-
 }
 
+
 //Tomo como parámetro un id y elimina dicho producto al carrito
-function removeCart (id){
+const removeCart = (id) => {
     let cartProducts = loadProductsCart();
     let position = cartProducts.findIndex(x => x.id == id); //Me devuelve la posición del producto con el id
     
@@ -180,5 +160,4 @@ function removeCart (id){
     saveProductsCart(cartProducts); //actualizo la Local Storage de productos carrito
     updateCartButton();
     renderCartProducts(); //para que renderice luego de borrar todo
-
 }
