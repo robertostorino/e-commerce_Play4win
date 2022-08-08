@@ -1,6 +1,6 @@
-////       Recupera el array de products del Local Storage       /////
+////       Retrieve product's array from Local Storage       /////
 
-//HTML
+//Render products via HTML
 const renderCartProducts = () => {
     let products = loadProductsCart();
     let content = `<p class="alert alert-warning" role="alert">Your Cart is empty!</p>`;
@@ -79,6 +79,7 @@ const renderCartProducts = () => {
     document.getElementById("cartProducts").innerHTML = content;
 }
 
+//// Main Cart Program
 
 updateCartButton();
 renderCartProducts();

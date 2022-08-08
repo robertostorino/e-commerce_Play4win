@@ -1,4 +1,15 @@
-//DOM
+//Set url with data
+let url = "./products.json";
+
+//Function to retrieve products in async-await from url. 
+const retrieveProducts = async (url) => {
+    const answer = await fetch(url);
+    const products = await answer.json();
+
+    saveProductsLS(products);
+}
+
+//Render products via DOM
 const renderProductsDOM = () => {
     let products = loadProductsLS();
 
@@ -56,14 +67,8 @@ const renderProductsDOM = () => {
     );
 }
 
+////  Main Program
 
-//Tomo datos de una fuente local, el archivo products.json
-fetch("./products.json")
-.then((response) => response.json())
-.then((products) => {
-    saveProductsLS(products);
-});
-
-
+retrieveProducts(url);
 updateCartButton();
 renderProductsDOM();
