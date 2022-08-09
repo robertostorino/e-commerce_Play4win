@@ -48,7 +48,7 @@ const renderProductsDOM = () => {
         //Creo el botón
         let paragraph_btn = document.createElement("p");
         paragraph_btn.className = "card-title text-center";
-        paragraph_btn.innerHTML = `<a class="btn btn-danger" onclick="addCart(${product.id})">Add</a>`;
+        paragraph_btn.innerHTML = `<a class="btn btn-danger " onclick="addCart(${product.id})">Add</a>`;
 
         //Conecto los elementos según su relación padre-hijo
         card_body.appendChild(title);

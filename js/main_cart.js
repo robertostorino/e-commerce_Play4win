@@ -61,14 +61,18 @@ const renderCartProducts = () => {
         content += `<tr>
                         <td></td>
                         <td></td>
-                        <td></td>
                         <td class="align-middle">Total Pay</td>
                         <td class="align-middle"><b>$${total}</b></td>
                         <td class="align-middle">( Discounted</td>
                         <td class="align-middle"><b>$${priceDiscounted})</b></td>
                         <td></td>
-                        <td class="align-middle">
-                            <a href="#" class="btn btn-success px-5" onclick="messageBuy()" title="Complete Transaction">Buy</a>
+                        
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class="d-flex">
+                            <a href="#" class="btn btn-success buttonStyle" onclick="messageBuy()" title="Complete Transaction">Buy</a>
                         </td>
                     </tr>`
         
