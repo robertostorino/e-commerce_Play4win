@@ -15,6 +15,10 @@
     background-image: linear-gradient(to right, cyan, green);
 }
 
+.color-blue {
+    color: #0077b9;
+}
+
 .underline-hover::after{
     content: "";
     height: 4px;
@@ -42,41 +46,15 @@
     border-style: none;
 } */
 
+.card--principal {
+    transition: 600ms ease-in-out;
+}
+.card--principal:hover {
+    transform: scale(1.04); 
+}
 
 .buttonStyle {
     font-weight: 600;
     font-size: 24px;
     padding: 10px 45px 10px 45px;
 }
-
-/* .button--buy {
-    background: transparent;
-    color: #3074F4;
-    font-weight: 800;
-    font-size: 24px;
-    text-transform: uppercase;
-    padding: 16px 36px;
-    border: 2px solid #3074F4;
-    border-radius: 24px;
-    transform: translate(0);
-    overflow: hidden;
-    cursor: pointer;
-}
-
-
-.button--buy::before {
-    content: "";
-    position: absolute;
-    background-color: #3074F4;
-    width: 8px;
-    top: 0;
-    bottom: 0;
-    left: -32px;
-    transform: rotate(-20deg);
-    filter: blur(6px);
-}
-
-.button--buy:hover::before {
-    left:calc(100% + 32px);
-    transition: 0.80s;
-} */

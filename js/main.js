@@ -1,74 +1,70 @@
 //Set url with data
 let url = "./products.json";
 
+//Setea el evento para que cuando se complete la carga del DOM, entonces dispara la función fetchData
+document.addEventListener("DOMContentLoaded", () => {
+    fetchData();
+});
+
 //Function to retrieve products in async-await from url. 
-const retrieveProducts = async (url) => {
-    const answer = await fetch(url);
-    const products = await answer.json();
+const fetchData = async () => {
+    try {
+        loadingData(true);
 
-    saveProductsLS(products);
-}
+        const answer = await fetch(url);
+        const products = await answer.json();
 
-//Render products via DOM
+        saveProductsLS(products);
+        updateCartButton();
+        renderProductsDOM();
+
+    } catch (error) {
+        console.log(error); //Si detecta un error lo muestra en la consola
+    } finally {
+        loadingData(false);
+    }
+};
+
+//Function to add and remove the "loading" message
+const loadingData = (state) => {
+    const loading = document.querySelector("#loading");
+    
+    state ? (loading.classList.remove("d-none")) : (loading.classList.add("d-none"));
+    
+};
+
+
+//Function to render products via DOM
 const renderProductsDOM = () => {
     let products = loadProductsLS();
-
-    //Recorro el array de products
+    let content = "";
+    
+    
     products.forEach(
         product => {
-        
-        //Crea el div contenedor de la tarjeta y le establece que ocupe 4 columns
-        let column = document.createElement("div");
-        column.className = "col-md-4"
 
-        //Crea el div tarjeta
-        let card = document.createElement("div");
-        card.className = "card border-0 fondo";
-
-        //Crea la image
-        let image = document.createElement("img");
-        image.src = `images/${product.image}`;
-        image.className = "card-img-top";
-        image.alt = product.name;
-
-        //Crea el cuerpo de la tarjeta
-        let card_body = document.createElement("div");
-        card_body.className = "card-body";
-
-        //Crea el título
-        let title = document.createElement("h5");
-        title.className = "card-title text-center";
-        title.innerHTML = product.name;
-
-        //Crea el precio
-        let price = document.createElement("p");
-        price.className = "card-title text-center";
-        title.innerHTML = "$" + product.price;
-
-        //Creo el botón
-        let paragraph_btn = document.createElement("p");
-        paragraph_btn.className = "card-title text-center";
-        paragraph_btn.innerHTML = `<a class="btn btn-danger " onclick="addCart(${product.id})">Add</a>`;
-
-        //Conecto los elementos según su relación padre-hijo
-        card_body.appendChild(title);
-        card_body.appendChild(price);
-        card_body.appendChild(paragraph_btn);
-
-        card.appendChild(image);
-        card.appendChild(card_body);
-
-        column.appendChild(card);
-
-        //Renderizo en el HTML
-        document.getElementById("products").appendChild(column);
-
+            content += `
+                    <div class="card shadow p-3 mb-5 bg-body rounded m-3" style="width: 18rem;">
+                        <div class="card-body p-1">
+                            <div class="card--principal">
+                                <img src="images/${product.image}" class="card-img-top">
+                            </div>
+                            <hr>
+                            <div class="d-flex" style="height: 120px;">
+                                <div class="flex-grow-1">
+                                    <h5 class="text-center color-blue fs-3">${product.name}</h5>
+                                </div>
+                            </div>
+                            <p class="lead fs-4 text-center">$${product.price}</p>
+                            <p class= "text-center">
+                                <a class="btn btn-outline-danger px-5" onclick="addCart(${product.id})" title="Add to cart">Add</a>
+                            </p>
+                        </div>
+                    </div>
+                    `
         }
-    );
+        
+    )
+
+    document.getElementById("products").innerHTML = content;
 }
-
-////  Main Program
-
-retrieveProducts(url);
-updateCartButton();
-renderProductsDOM();

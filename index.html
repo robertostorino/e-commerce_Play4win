@@ -6,30 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Play 4 win</title>
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
-    <!-- My CSS -->
-    <link rel="stylesheet" href="./css/style.css">
-    <!-- CSS only -->
+    
+    <!-- CSS Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <!-- Toastify js -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- My CSS -->
+    <link rel="stylesheet" href="./css/style.css">
     
 </head>
 <body class="fondo">
-    <header class="container-fluid py-3 sticky-md-top fondo">
+    <header class="container py-3 sticky-md-top fondo">
         <div class="row">
             <div class="col-md-11">
                 <ul class="nav d-flex align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./index.html"><img src="./images/logo.png" alt="Play 4 win" width="48"></a>
+                        <a class="nav-link active" aria-current="page" href="./index.html"><img src="./images/logo.png" alt="Play 4 win" width="58"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link underline-hover" href="./index.html">Games</a>
+                        <a class="nav-link active underline-hover fs-3" href="./index.html">Games</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link underline-hover" href="#">Accesories</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link underline-hover" href="#">Contact</a>
+                        <a class="nav-link underline-hover fs-3" href="#">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -40,8 +38,16 @@
     </header>
 
     <main class="fondo">
-        <div class="container p-4">
-            <h1 class="text-center">Productos</h1>
+        <div class="container p-1 col-md-10">
+            <section class="d-flex align-items-center" id="loading">
+                <strong>Loading...</strong>
+                <div
+                    class="spinner-border ms-auto"
+                    role="status"
+                    aria-hidden="true"
+                ></div>
+            </section>
+            <h1 class="text-center color-blue">Products</h1>
             <div id="products" class="row py-3">
                 
             </div>

@@ -5,7 +5,7 @@
         "category":"First-shooter", 
         "description":"", 
         "image":"battlefield2042PS4.jpg", 
-        "price":500
+        "price":10500
     },
     {
         "id":2, 
@@ -13,7 +13,7 @@
         "category":"RPG Adventure", 
         "description":"", 
         "image":"eldenRingPS4.jpeg", 
-        "price":600
+        "price":14600
     },
     {
         "id": 3,
@@ -21,7 +21,7 @@
         "category": "RPG",
         "description": "",
         "image": "finalFantasyRemakeVIIPS4.jpg",
-        "price": 450
+        "price": 12450
     },
     {
         "id": 4,
@@ -29,7 +29,7 @@
         "category": "Adventure",
         "description": "",
         "image": "ghostOfTsushimaPS4.jpg",
-        "price": 650
+        "price": 15650
     },
     {
         "id": 5,
@@ -37,7 +37,7 @@
         "category": "Racing Car Simulator",
         "description": "",
         "image": "granTurismo7PS4.jpg",
-        "price": 450
+        "price": 14450
     },
     {
         "id": 6,
@@ -45,7 +45,7 @@
         "category": "Distopic Sandbox",
         "description": "",
         "image": "horizonForbiddenWestStandardPS4.jpeg",
-        "price": 500
+        "price": 17500
     },
     {
         "id": 7,
@@ -53,7 +53,7 @@
         "category": "Adventure",
         "description": "",
         "image": "sekiroGOTYEditionPS4.jpg",
-        "price": 500
+        "price": 13500
     },
     {
         "id": 8,
@@ -61,7 +61,7 @@
         "category": "Adventure",
         "description": "",
         "image": "shadowOfWarPS4.jpg",
-        "price": 500
+        "price": 9500
     },
     {
         "id": 9,
@@ -69,7 +69,7 @@
         "category": "Adventure",
         "description": "",
         "image": "starWarsJediDeluxEditionPS4.jpg",
-        "price": 500
+        "price": 10500
     },
     {
         "id": 10,
@@ -77,7 +77,7 @@
         "category": "Fight",
         "description": "",
         "image": "streetFighterVChampioEditionPS4.jpg",
-        "price": 500
+        "price": 10500
     },
     {
         "id": 11,
@@ -85,7 +85,7 @@
         "category": "Fight",
         "description": "",
         "image": "theKingOfFightersXVPS4.jpg",
-        "price": 500
+        "price": 13500
     },
     {
         "id": 12,
@@ -93,7 +93,7 @@
         "category": "Adventure",
         "description": "",
         "image": "uncharted4PS4.jpg",
-        "price": 500
+        "price": 8500
     },
     {
         "id": 13,
@@ -101,6 +101,30 @@
         "category": "Fight",
         "description": "",
         "image": "w2k20PS4.jpg",
-        "price": 500
+        "price": 8500
+    },
+    {
+        "id": 14,
+        "name": "Dying Light 2 PS4",
+        "category": "Zombies",
+        "description": "",
+        "image": "dyingLight2PS4.jpeg",
+        "price": 10400
+    },
+    {
+        "id": 15,
+        "name": "FIFA 22 PS4",
+        "category": "Football",
+        "description": "",
+        "image": "fifa22PS4.jpg",
+        "price": 11500
+    },
+    {
+        "id": 16,
+        "name": "Dragon Ball FighterZ PS4",
+        "category": "Adventure",
+        "description": "",
+        "image": "dragonBallFighterZPS4.jpg",
+        "price": 8500
     }
 ]

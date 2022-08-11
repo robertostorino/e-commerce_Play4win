@@ -9,7 +9,7 @@ const renderCartProducts = () => {
     let productCounter = 0; 
     
     if (products.length > 0) {
-        content = `<p class="text-end"><a href="#" class="btn btn-danger px-4" onclick="messageCleanCart()" title="Clean Cart">Clean Cart<img src="images/basket.png" width="24"></a></p>
+        content = `<p class="text-end"><a href="#" class="btn btn-outline-danger px-4" onclick="messageCleanCart()" title="Clean Cart">Clean Cart  <img src="images/basket.png" width="24"></a></p>
             <table class="table">
             <tr>
                 <td></td>
@@ -72,7 +72,7 @@ const renderCartProducts = () => {
                         <td></td>
                         <td></td>
                         <td class="d-flex">
-                            <a href="#" class="btn btn-success buttonStyle" onclick="messageBuy()" title="Complete Transaction">Buy</a>
+                            <a href="#" class="btn btn-outline-success buttonStyle" onclick="messageBuy()" title="Complete Transaction">Buy</a>
                         </td>
                     </tr>`
         
