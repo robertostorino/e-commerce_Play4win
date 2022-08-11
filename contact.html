@@ -21,13 +21,13 @@
             <div class="col-md-11">
                 <ul class="nav d-flex align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="./index.html"><img src="./images/logo.png" alt="Play 4 win" width="58"></a>
+                        <a class="nav-link" aria-current="page" href="./index.html"><img src="./images/logo.png" alt="Play 4 win" width="58"></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active underline-hover fs-3" href="./index.html">Games</a>
+                        <a class="nav-link underline-hover fs-3" href="./index.html">Games</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link underline-hover fs-3" href="./contact.html">Contact</a>
+                        <a class="nav-link active underline-hover fs-3" href="./contact.html">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -39,16 +39,24 @@
 
     <main class="fondo">
         <div class="container p-1 col-md-10">
-            <section class="d-flex align-items-center" id="loading">
-                <strong>Loading...</strong>
-                <div
-                    class="spinner-border ms-auto"
-                    role="status"
-                    aria-hidden="true"
-                ></div>
-            </section>
-            <h1 class="text-center color-blue">Products</h1>
-            <div id="products" class="row py-3">
+            <div class="container px-5 my-5">
+                <h1 class="color-blue text-center mb-4">
+                    Contact Registration
+                </h1>
+                
+                <form>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" type="text" id="name">
+                        <label>Name</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input class="form-control" type="text" id="email"><br>
+                        <label>Email</label>
+                    </div>
+                    <div class="d-grid">
+                        <input class="btn btn-outline-primary btn-lg " type="button" id="submitButton" value="Enviar">
+                    </div>
+                </form>
                 
             </div>
         </div>
@@ -78,8 +86,6 @@
     <!-- Toastify js -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <!-- JavaScript -->
-    <script src="./js/products.js"></script>
-    <script src="./js/functions.js"></script>
-    <script src="./js/main.js"></script>
+    <script src="./js/contact_functions.js"></script>
 </body>
 </html>
